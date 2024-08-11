@@ -1,0 +1,126 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para o container principal */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilo para o título */
+.titulo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo para o input de adicionar tarefa */
+#input {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Estilo para o botão de adicionar */
+.btnAdicionar {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btnAdicionar:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para a lista de tarefas */
+#lista {
+    list-style: none;
+    margin-top: 20px;
+    padding-left: 0;
+    max-width: 400px;
+    margin: 0 auto; /* Centraliza a lista horizontalmente */
+    overflow-y: auto; /* Adiciona scroll se a lista ultrapassar a altura máxima */
+    counter-reset: item; /* Reinicia o contador ao início da lista */
+}
+
+#lista li {
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    position: relative;
+    counter-increment: item; /* Incrementa o contador para cada item */
+}
+
+#lista li:hover {
+    background-color: #f1f1f1;
+}
+
+#lista li::before {
+    content: counter(item) ".";
+    font-size: 18px;
+    color: #007bff;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Estilo para o texto da tarefa */
+#lista li span {
+    font-size: 18px;
+    color: #555;
+    flex-grow: 1;
+}
+
+/* Estilo para os botões de editar e remover */
+.btnEditar, .btnRemover {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btnEditar {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btnEditar:hover {
+    background-color: #138496;
+    transform: scale(1.05);
+}
+
+.btnRemover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btnRemover:hover {
+    background-color: #c82333;
+    transform: scale(1.05);
+}
